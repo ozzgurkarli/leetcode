@@ -33,10 +33,24 @@ class Program
     {
         for (int i = startIndex; i < nums.Length; i++)
         {
-            if (nums[i] == num && !pairedIndexes.Contains(i))
+            if (nums[i] == num && listContains(pairedIndexes, i) && !pairedIndexes.Contains(i))
                 return i;
         }
 
         return -1;
+    }
+
+    private bool listContains<T>(List<T> list, T value)
+    {
+        if (value == null)
+            return false;
+        
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (value.Equals(list[i]))
+                return true;
+        }
+
+        return false;
     }
 }
