@@ -55,5 +55,41 @@ public partial class Leetcode
         {
             folderPaths.Add(replace(folder[i], '/', '\0'));
         }
+
+        return output;
+    }
+
+    public int solution_1399_(int n)
+    {
+        // return n  % 9;
+        if (n == 0 || n == 1)
+            return n;
+        
+        int output = 1;
+        
+        List<List<int>> upperList = new List<List<int>>();
+        int indexToAdd;
+        
+        for (int i = 0; i < n; i++)
+        {
+            if(upperList.Count < 9)
+                upperList.Add(new List<int>());
+            
+            indexToAdd = i % 9;
+            
+            upperList[indexToAdd].Add(i);
+        }
+
+        int maxLen = upperList[0].Count;
+
+        for (int i = 1; i < (n < 9 ? n : upperList.Count); i++)
+        {
+            if (upperList[i].Count != maxLen)
+                break;
+
+            output++;
+        }
+
+        return output;
     }
 }

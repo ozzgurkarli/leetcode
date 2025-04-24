@@ -7,7 +7,7 @@ class Program
     {
         Leetcode worker = new Leetcode();
 
-        worker.solution_1769_("110");
+        worker.solution_1399_(14);
     }
     
 }
