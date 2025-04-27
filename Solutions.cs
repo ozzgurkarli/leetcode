@@ -92,4 +92,20 @@ public partial class Leetcode
 
         return output;
     }
+
+    public int solution_3392_(int[] nums)
+    {
+        if (nums.Length < 3)
+            return 0;
+        
+        int output = 0;
+        
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            if (nums[i + 1] / 2 == nums[i] + nums[i + 2])
+                output++;
+        }
+
+        return output;
+    }
 }
